@@ -1,22 +1,5 @@
-def label = 'k8s-runner'
-
-podTemplate(
-    label: label,
-    containers: [
-        containerTemplate(
-            name: 'jnlp',
-            image: 'synology:6000/jenkins-agent:latest',
-            workingDir: '/home/jenkins',
-            ttyEnabled: true,
-            command: 'cat',
-        )
-    ],
-    volumes: [
-        hostPathVolume(hostPath: '/usr/bin/docker', mountPath: '/usr/bin/docker'),
-        hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
-    ]
-) {
-    node(label) {
+podTemplate {
+    node('jenkins-slave') {
 
         def myRepo = checkout scm
 
