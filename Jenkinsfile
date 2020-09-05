@@ -1,8 +1,5 @@
-import jenkins.model.*
-jenkins = Jenkins.instance
-
 podTemplate(
-  label: jenkins-slave-2,
+  label: 'jenkins-slave-2',
   containers: [
     containerTemplate(
       name: 'jnlp',
