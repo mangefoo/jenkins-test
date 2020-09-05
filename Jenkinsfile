@@ -1,4 +1,4 @@
-def label = 'ci-runner'
+def label = 'ci-runner-2'
 
 podTemplate(
     label: label,
