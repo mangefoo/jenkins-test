@@ -13,6 +13,7 @@ podTemplate(
 
         stage('Hello') {
           echo 'Hello Sweden'
+          sh "uname -m"
         }
     }
 }
