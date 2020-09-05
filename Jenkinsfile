@@ -1,39 +1,25 @@
 def label = 'ci-runner-2'
 
-pipeline {
-  agent {
-    kubernetes {
-      yaml """
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    some-label: some-label-value
-spec:
-  containers:
-  - name: maven
-    image: maven:alpine
-    command:
-    - cat
-    tty: true
-  - name: busybox
-    image: busybox
-    command:
-    - cat
-    tty: true
-"""
-    }
-  }
-  stages {
-    stage('Run maven') {
-      steps {
-        container('maven') {
-          sh 'mvn -version'
+podTemplate(
+    label: label,
+    containers: [
+        containerTemplate(
+            name: 'jnlp',
+            image: 'synology:6000/jenkins-agent:latest',
+            workingDir: '/home/jenkins',
+        )
+    ],
+    volumes: [
+        hostPathVolume(hostPath: '/usr/bin/docker', mountPath: '/usr/bin/docker'),
+        hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
+    ]
+) {
+    node(label) {
+
+        def myRepo = checkout scm
+
+        stage('Hello') {
+          echo 'Hello Sweden'
         }
-        container('busybox') {
-          sh '/bin/busybox'
-        }
-      }
     }
-  }
 }
