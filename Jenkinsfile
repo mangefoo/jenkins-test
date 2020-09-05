@@ -6,6 +6,7 @@ podTemplate(
         containerTemplate(
             name: 'jnlp',
             image: 'synology:6000/jenkins-agent:latest',
+            imagePullPolicy: 'always',
             workingDir: '/home/jenkins',
         )
     ],
