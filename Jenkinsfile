@@ -7,7 +7,8 @@ podTemplate(
             name: 'jnlp',
             image: 'synology:6000/jenkins-agent:latest',
             workingDir: '/home/jenkins',
-            ttyEnabled: true
+            ttyEnabled: true,
+            command: 'cat',
         )
     ],
     volumes: [
