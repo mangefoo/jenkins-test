@@ -19,9 +19,7 @@ podTemplate(
         def myRepo = checkout scm
 
         stage('Hello') {
-            steps {
-                echo 'Hello Sweden'
-            }
+          echo 'Hello Sweden'
         }
     }
 }
