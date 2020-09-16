@@ -16,7 +16,9 @@ podTemplate(
           sh "uname -m"
         }
 
-	def slackResponse = slackSend color: "danger", message: "Fucking failure"
+//	def slackResponse = slackSend color: "good", message: "Fucking failure"
+//	slackResponse.addReaction("thumbsup")
+	def slackResponse = slackSend(channel: "emoji-demo", message: "Here is the primary message")
 	slackResponse.addReaction("thumbsup")
     }
 }
