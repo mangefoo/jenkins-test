@@ -15,5 +15,7 @@ podTemplate(
           echo 'Hello Sweden'
           sh "uname -m"
         }
+
+	slackSend color: "good", message: "Message from Jenkins Pipeline"
     }
 }
