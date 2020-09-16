@@ -16,6 +16,7 @@ podTemplate(
           sh "uname -m"
         }
 
-	slackSend color: "error", message: "Fucking failure"
+	def slackResposne = slackSend color: "error", message: "Fucking failure"
+	slackResponse.addReaction("thumbsup")
     }
 }
