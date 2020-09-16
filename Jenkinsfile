@@ -16,6 +16,6 @@ podTemplate(
           sh "uname -m"
         }
 
-	slackSend color: "good", message: "Message from Jenkins Pipeline"
+	slackSend color: "error", message: "Fucking failure"
     }
 }
