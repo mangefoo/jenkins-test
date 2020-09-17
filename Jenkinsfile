@@ -24,6 +24,6 @@ podTemplate(
 //	slackResponse.addReaction("thumbsup")
 
 	def userId = slackUserIdFromEmail('magnus@mindphaser.se')
-	slackSend(color: "good", message: "<@$userId> Message from Jenkins Pipeline")
+	slackSend(user: userId, color: "good", message: "Message from Jenkins Pipeline")
     }
 }
