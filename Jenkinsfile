@@ -19,5 +19,8 @@ podTemplate(
 	slackSend color: "good", message: "Good"
 	slackSend color: "warning", message: "Warning"
 	slackSend color: "danger", message: "Danger"
+
+	def slackResponse = slackSend(channel: "jenkins-notifications", message: "Here is the primary message")
+	slackResponse.addReaction("thumbsup")
     }
 }
