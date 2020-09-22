@@ -12,7 +12,7 @@ podTemplate(
         def myRepo = checkout scm
 
         stage('Hello') {
-          echo 'Hello Sweden'
+          echo 'Hello, world'
           sh "uname -m"
         }
 
