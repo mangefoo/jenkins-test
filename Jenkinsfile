@@ -16,6 +16,7 @@ podTemplate(
           sh "uname -m"
 	  sh "java -version"
 	  sh "docker version"
+          sh "sleep 600"
         }
 
 //	slackSend color: "good", message: "Good"
