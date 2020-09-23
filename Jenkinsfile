@@ -14,7 +14,7 @@ podTemplate(
         stage('Hello') {
           echo 'Hello, world'
           sh "uname -m"
-	  java -version
+	  sh "java -version"
         }
 
 //	slackSend color: "good", message: "Good"
