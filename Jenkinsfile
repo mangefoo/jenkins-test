@@ -15,6 +15,7 @@ podTemplate(
           echo 'Hello, world'
           sh "uname -m"
 	  sh "java -version"
+	  sh "docker version"
         }
 
 //	slackSend color: "good", message: "Good"
