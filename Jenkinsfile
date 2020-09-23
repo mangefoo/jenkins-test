@@ -3,7 +3,7 @@ podTemplate(
   containers: [
     containerTemplate(
       name: 'jnlp',
-      image: 'synology:6000/inbound-agent:latest'
+      image: 'synology:6000/inbound-agent:1.1'
     )
   ]
 ) {
