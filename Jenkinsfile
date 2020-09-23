@@ -15,7 +15,6 @@ podTemplate(
           echo 'Hello, world'
           sh "uname -m"
 	  sh "java -version"
-	  sh "docker version"
           sh "sleep 600"
         }
 
