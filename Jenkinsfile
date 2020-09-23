@@ -1,5 +1,5 @@
 podTemplate(
-  label: 'jenkins-slave-2',
+  label: 'jenkins-slave-3',
   containers: [
     containerTemplate(
       name: 'jnlp',
