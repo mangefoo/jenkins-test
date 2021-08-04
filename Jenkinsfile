@@ -7,7 +7,7 @@ podTemplate(
     )
   ]
 ) {
-    node('jenkins-slave-2') {
+    node('jenkins-slave-3') {
 
         def myRepo = checkout scm
 
